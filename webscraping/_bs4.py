@@ -15,6 +15,7 @@ print(soup.a)
 print(soup.a.attrs)
 print(soup.a["href"])
 
+'''
 print(soup.find("a", attrs={"class": "Nbtn_upload"}))
 print(soup.find(attrs={"class":"Nbth_upload"}))
 
@@ -26,3 +27,13 @@ i = 1
 for otherRank in otherRanks:
     i = i+1
     print("rank {}: {}".format(i, otherRank.a.get_text()))
+'''
+
+cartoons = soup.find_all("a", attrs = {"class" : "title"})
+print('만화 수 : ', len(cartoons))
+
+for i, cartoon in enumerate(cartoons):
+    if i == 15:
+        break
+    print(cartoon.get_text())
+
